@@ -32,7 +32,7 @@ function ModuleCard({ mod, index }: { mod: typeof modules[0]; index: number }) {
       onClick={() => setOpen(!open)}
     >
       <div className="flex items-center gap-5 p-6">
-        <span className="text-2xl font-display font-extrabold text-primary/30 tabular-nums w-10 shrink-0">{mod.num}</span>
+        <span className="text-2xl font-display font-bold text-primary/30 tabular-nums w-10 shrink-0">{mod.num}</span>
         <span className="font-display font-bold text-foreground flex-1">{mod.title}</span>
         <motion.div animate={{ rotate: open ? 180 : 0 }} transition={transition}>
           <ChevronDown size={20} strokeWidth={1.5} className="text-muted-foreground" />
@@ -83,7 +83,9 @@ export default function CurriculumSection() {
         className="text-center mb-6"
       >
         <p className="text-xs font-mono-code text-primary uppercase tracking-widest mb-4">The Blueprint</p>
-        <h2 className="heading-display text-3xl lg:text-4xl mb-4">SAP PP Course Curriculum</h2>
+        <h2 className="heading-display text-3xl lg:text-4xl mb-4">
+          SAP PP <span className="heading-gradient">Course Curriculum</span>
+        </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">10 comprehensive modules covering everything from SAP basics to real-time project scenarios and interview preparation.</p>
       </motion.div>
 

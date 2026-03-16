@@ -39,9 +39,7 @@ function MRPCard() {
         </div>
         <p className="font-semibold text-foreground">{hovered ? "CO01 — Order Created" : "MD04 — Stock/Req List"}</p>
         <p className="text-sm text-muted-foreground mt-1">
-          {hovered
-            ? "Production order is now ready for execution"
-            : "Planned order awaiting conversion"}
+          {hovered ? "Production order is now ready for execution" : "Planned order awaiting conversion"}
         </p>
       </motion.div>
     </motion.div>
@@ -62,7 +60,7 @@ export default function WhyLearnSection() {
         >
           <p className="text-xs font-mono-code text-primary uppercase tracking-widest mb-4">Why Learn SAP PP</p>
           <h2 className="heading-display text-3xl lg:text-4xl mb-6">
-            Stop learning theory.<br />Start planning production.
+            Stop learning theory.<br /><span className="heading-gradient">Start planning production.</span>
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-8">
             SAP Production Planning (SAP PP) is one of the most important modules in SAP ERP, used by manufacturing companies worldwide to manage production planning and execution.

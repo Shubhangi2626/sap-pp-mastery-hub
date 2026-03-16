@@ -12,9 +12,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Plus Jakarta Sans"', 'sans-serif'],
-        body: ['"Plus Jakarta Sans"', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'monospace'],
+        display: ['"Space Grotesk"', 'sans-serif'],
+        body: ['"DM Sans"', 'sans-serif'],
+        mono: ['"Fira Code"', 'monospace'],
       },
       colors: {
         border: "hsl(var(--border))",

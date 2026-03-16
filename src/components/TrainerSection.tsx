@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { BadgeCheck, Briefcase, Users, FolderKanban } from "lucide-react";
+import trainerImg from "@/assets/trainer.jpg";
 
 const transition = { type: "spring" as const, duration: 0.6, bounce: 0 };
 
@@ -41,29 +42,30 @@ export default function TrainerSection() {
   return (
     <section id="trainer" className="section-wrapper" ref={ref}>
       <div className="grid lg:grid-cols-2 gap-16 items-center">
-        {/* Left — Trainer Visual */}
+        {/* Left — Trainer Image */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={transition}
           className="flex flex-col items-center"
         >
-          <div className="relative w-72 h-72 rounded-3xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-6">
-            <span className="text-8xl font-display font-extrabold text-primary/20">SW</span>
+          <div className="relative w-72 h-72 rounded-3xl overflow-hidden mb-6 border-2 border-primary/20">
+            <img src={trainerImg} alt="Shubham Waghumbare - SAP PP Trainer" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
             {/* Verified badge */}
-            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 surface-glass rounded-full px-4 py-2 flex items-center gap-2">
+            <div className="absolute -bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 surface-glass rounded-full px-4 py-2 flex items-center gap-2">
               <BadgeCheck size={16} strokeWidth={1.5} className="text-primary" />
               <span className="text-xs font-semibold text-foreground whitespace-nowrap">Verified Consultant</span>
             </div>
           </div>
 
-          <div className="flex gap-6 mt-8">
+          <div className="flex gap-6 mt-10">
             {stats.map((s) => (
               <div key={s.label} className="text-center">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
                   <s.icon size={18} strokeWidth={1.5} className="text-primary" />
                 </div>
-                <p className="font-display font-extrabold text-2xl text-foreground tabular-nums">
+                <p className="font-display font-bold text-2xl text-foreground tabular-nums">
                   <CountUp target={s.value} suffix={s.suffix} />
                 </p>
                 <p className="text-xs text-muted-foreground mt-1">{s.label}</p>
@@ -79,7 +81,9 @@ export default function TrainerSection() {
           transition={{ ...transition, delay: 0.15 }}
         >
           <p className="text-xs font-mono-code text-primary uppercase tracking-widest mb-4">Meet Your Trainer</p>
-          <h2 className="heading-display text-3xl lg:text-4xl mb-2">Shubham Waghumbare</h2>
+          <h2 className="heading-display text-3xl lg:text-4xl mb-2">
+            <span className="heading-gradient">Shubham Waghumbare</span>
+          </h2>
           <p className="text-muted-foreground font-medium mb-6">SAP PP Consultant | 6+ Years Experience</p>
 
           <p className="text-muted-foreground leading-relaxed mb-6">
@@ -94,7 +98,7 @@ export default function TrainerSection() {
               "Integration with SAP MM and SAP QM",
             ].map((exp) => (
               <div key={exp} className="flex items-center gap-3 text-sm text-muted-foreground">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0" />
+                <span className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0" />
                 {exp}
               </div>
             ))}

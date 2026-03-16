@@ -15,16 +15,12 @@ export default function Footer() {
     <footer className="border-t border-border bg-card">
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <a href="#home" className="font-display text-xl font-extrabold text-foreground">
+          <a href="#home" className="font-display text-xl font-bold text-foreground">
             SAP<span className="text-primary">PP</span>Training
           </a>
           <div className="flex flex-wrap items-center justify-center gap-6">
             {links.map((l) => (
-              <button
-                key={l.href}
-                onClick={() => scrollTo(l.href)}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
-              >
+              <button key={l.href} onClick={() => scrollTo(l.href)} className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
                 {l.label}
               </button>
             ))}

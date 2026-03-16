@@ -19,14 +19,15 @@ export default function ContactSection() {
   return (
     <section id="contact" className="section-wrapper" ref={ref}>
       <div className="grid lg:grid-cols-2 gap-16">
-        {/* Left */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={transition}
         >
           <p className="text-xs font-mono-code text-primary uppercase tracking-widest mb-4">Get Started</p>
-          <h2 className="heading-display text-3xl lg:text-4xl mb-4">Start Your SAP PP Journey Today</h2>
+          <h2 className="heading-display text-3xl lg:text-4xl mb-4">
+            Start Your <span className="heading-gradient">SAP PP Journey</span> Today
+          </h2>
           <p className="text-muted-foreground leading-relaxed mb-10">
             Interested in learning SAP PP? Fill the form and we will contact you with course details.
           </p>
@@ -58,7 +59,6 @@ export default function ContactSection() {
           </motion.a>
         </motion.div>
 
-        {/* Right — Form */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -96,7 +96,7 @@ export default function ContactSection() {
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.98 }}
               transition={transition}
-              className="w-full py-3.5 rounded-lg bg-primary text-primary-foreground font-semibold text-sm shadow-lg shadow-primary/25"
+              className="w-full py-3.5 rounded-lg bg-primary text-primary-foreground font-semibold text-sm shadow-lg shadow-primary/30"
             >
               Secure My Spot
             </motion.button>
