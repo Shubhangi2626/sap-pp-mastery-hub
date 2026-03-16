@@ -28,24 +28,15 @@ export default function Navbar() {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "surface-glass" : "bg-transparent"
-      }`}
-    >
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "surface-glass" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-        <a href="#home" className="font-display text-xl font-extrabold text-foreground">
+        <a href="#home" className="font-display text-xl font-bold text-foreground">
           SAP<span className="text-primary">PP</span>Training
         </a>
 
-        {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((l) => (
-            <button
-              key={l.href}
-              onClick={() => scrollTo(l.href)}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
-            >
+            <button key={l.href} onClick={() => scrollTo(l.href)} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300">
               {l.label}
             </button>
           ))}
@@ -60,7 +51,6 @@ export default function Navbar() {
           </motion.button>
         </div>
 
-        {/* Mobile toggle */}
         <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
           {mobileOpen ? <X size={24} strokeWidth={1.5} /> : <Menu size={24} strokeWidth={1.5} />}
         </button>
@@ -68,27 +58,14 @@ export default function Navbar() {
 
       <AnimatePresence>
         {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={transition}
-            className="md:hidden surface-glass border-t border-border"
-          >
+          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} transition={transition} className="md:hidden surface-glass border-t border-border">
             <div className="flex flex-col p-6 gap-4">
               {navLinks.map((l) => (
-                <button
-                  key={l.href}
-                  onClick={() => scrollTo(l.href)}
-                  className="text-left text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
-                >
+                <button key={l.href} onClick={() => scrollTo(l.href)} className="text-left text-base font-medium text-muted-foreground hover:text-foreground transition-colors">
                   {l.label}
                 </button>
               ))}
-              <button
-                onClick={() => scrollTo("#contact")}
-                className="mt-2 px-5 py-3 rounded-lg bg-primary text-primary-foreground text-sm font-semibold text-center"
-              >
+              <button onClick={() => scrollTo("#contact")} className="mt-2 px-5 py-3 rounded-lg bg-primary text-primary-foreground text-sm font-semibold text-center">
                 Enroll Now
               </button>
             </div>

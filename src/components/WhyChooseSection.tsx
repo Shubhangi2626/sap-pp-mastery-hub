@@ -26,7 +26,9 @@ export default function WhyChooseSection() {
         className="text-center mb-16"
       >
         <p className="text-xs font-mono-code text-primary uppercase tracking-widest mb-4">Why Choose Us</p>
-        <h2 className="heading-display text-3xl lg:text-4xl">The Blueprint Advantage</h2>
+        <h2 className="heading-display text-3xl lg:text-4xl">
+          The <span className="heading-gradient">Blueprint</span> Advantage
+        </h2>
       </motion.div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

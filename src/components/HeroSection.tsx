@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Calendar, Download, Radio, Briefcase, MessageSquare, HeartHandshake } from "lucide-react";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const transition = { type: "spring" as const, duration: 0.7, bounce: 0 };
 
@@ -12,11 +13,18 @@ const highlights = [
 
 export default function HeroSection() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center grid-bg overflow-hidden">
-      {/* Gradient orb */}
-      <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-primary/10 blur-[120px] pointer-events-none" />
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img src={heroBg} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
+      </div>
 
-      <div className="section-wrapper w-full">
+      {/* Gradient orbs */}
+      <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-primary/8 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 left-1/6 w-[300px] h-[300px] rounded-full bg-accent/5 blur-[100px] pointer-events-none" />
+
+      <div className="section-wrapper w-full relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left */}
           <motion.div
@@ -24,13 +32,13 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...transition, delay: 0.1 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-card text-xs font-medium text-muted-foreground mb-6">
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-xs font-medium text-primary mb-6">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               Next Batch Starting Soon
             </div>
 
             <h1 className="heading-display text-5xl lg:text-6xl leading-[1.05] mb-6">
-              Master <span className="text-primary">SAP PP</span> with Real-Time Industry Training
+              Master <span className="heading-gradient">SAP PP</span> with Real-Time Industry Training
             </h1>
 
             <p className="text-lg text-muted-foreground leading-relaxed max-w-xl mb-10">
@@ -43,7 +51,7 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 transition={transition}
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-primary text-primary-foreground font-semibold text-sm shadow-lg shadow-primary/25"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-primary text-primary-foreground font-semibold text-sm shadow-lg shadow-primary/30"
               >
                 <Calendar size={18} strokeWidth={1.5} />
                 Book Free Demo Class
